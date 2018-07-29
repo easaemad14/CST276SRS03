@@ -147,6 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="concreteCreator.hpp" />
+    <ClInclude Include="concreteProduct.hpp" />
+    <ClInclude Include="creator.hpp" />
+    <ClInclude Include="product.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
