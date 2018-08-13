@@ -1,0 +1,44 @@
+{
+	"Name": "Triangle",
+	"Contents": {
+		"Coordinates": [
+			0,
+			0
+		],
+		"Edges": [
+			{
+				"Contents": {
+						"Coordinates": [
+							0,
+							0
+						],
+						"Degree": 0.0,
+						"Length": 1
+					},
+					"Name": "Line"
+			},
+			{
+				"Contents": {
+                    "Coordinates": [
+                        0,
+                        1
+                    ],
+                    "Degree": 300.0,
+                    "Length": 1
+                },
+                "Name": "Line"
+			},
+			{
+				"Contents": {
+                    "Coordinates": [
+                        0,
+                        0
+                    ],
+                    "Degree": 60.0,
+                    "Length": 1
+                },
+                "Name": "Line"
+			}
+		]
+	}
+}

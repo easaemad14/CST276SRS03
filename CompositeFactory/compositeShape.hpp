@@ -13,11 +13,34 @@
 
 class Composite : public Shape {
 public:
+	Composite() = default; 
+
 	Composite(struct Coordinates origin, json contents)
 	{
 		origin_ = origin;
 		
 		name_ = "Composite";
 		contents_ = contents;
+	}
+
+	Composite(json full)
+	{
+		try {
+			name_ = full["Name"].get<std::string>();
+		}
+		catch (...) {
+			name_ = "Composite";
+		}
+
+		try {
+			contents_ = full["Contents"];
+		}
+		catch (...) {
+			contents_ = nullptr;
+		}
+
+		if (!parseContents(contents_)) {
+			Composite();
+		}
 	}
 };

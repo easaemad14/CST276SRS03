@@ -14,6 +14,7 @@
 class Polygon : public Line {
 public:
 	Polygon() = default;
+
 	Polygon(struct Coordinates origin, std::vector<Line> edges)
 	{
 		// Need an array of edges for our JSON object
@@ -29,6 +30,35 @@ public:
 			{ "Edges", arr },
 			{ "Coordinates",{ origin_.x_, origin_.y_ } }
 		};
+	}
+
+	Polygon(json contents)
+	{
+		if (!parseContents(contents)) {
+			Polygon();
+		}
+	}
+
+	void parseSubContents() override
+	{
+		//json e;
+		//try {
+		//	e = contents_["Edges"];
+		//}
+		//catch (...) {
+		//	// No edges?
+		//}
+
+		//if (e.is_array()) {
+		//	for (auto edge : e) {
+		//		edges_.push_back(edge);
+		//	}
+		//}
+	}
+
+	void swapEdges(std::vector<Line> e)
+	{
+		edges_.swap(e);
 	}
 
 protected:

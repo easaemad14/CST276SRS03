@@ -13,6 +13,8 @@
 // I am not doing any error checking yet...
 class Rectangle final : public Polygon {
 public:
+	Rectangle() = default;
+
 	Rectangle(struct Coordinates origin, std::vector<Line> edges)
 	{
 		// Need an array of edges for our JSON object
@@ -20,7 +22,8 @@ public:
 		for (auto e : edges) {
 			arr.push_back(e.Jsonify());
 		}
-		edges_.swap(edges);
+		swapEdges(edges);
+
 		origin_.x_ = origin.x_;
 		origin_.y_ = origin.y_;
 
@@ -29,5 +32,12 @@ public:
 			{ "Edges", arr },
 			{ "Coordinates",{ origin_.x_, origin_.y_ } }
 		};
+	}
+
+	Rectangle(json contents)
+	{
+		if (!parseContents(contents)) {
+			Rectangle();
+		}
 	}
 };

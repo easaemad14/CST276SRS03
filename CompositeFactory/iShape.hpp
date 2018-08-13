@@ -6,6 +6,7 @@
 *
 * Description:	Defines the shape interface
 ********************************************************************************************/
+#include <string>
 #include "json.h" // Thanks Neils!
 
 

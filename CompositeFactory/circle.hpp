@@ -11,6 +11,8 @@
 
 class Circle final : public Shape {
 public:
+	Circle() = default;
+
 	Circle(struct Coordinates origin, double radius)
 	{
 		origin_ = origin;
@@ -21,6 +23,23 @@ public:
 			{ "Radius", radius_ },
 			{ "Coordinates",{ origin_.x_, origin_.y_ } }
 		};
+	}
+
+	Circle(json contents)
+	{
+		if (!parseContents(contents)) {
+			Circle();
+		}
+	}
+
+	void parseSubContents() override
+	{
+		try {
+			radius_ = contents_["Radius"].get<double>();
+		}
+		catch (...) {
+			radius_ = 0;
+		}
 	}
 
 private:

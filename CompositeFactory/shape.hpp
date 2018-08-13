@@ -35,6 +35,43 @@ public:
 		};
 	}
 
+protected:
+	bool parseContents(json contents) // Type should be defined (from name)
+	{
+		// Ensure our Contents is a json object...
+		if (!contents_ || !contents_.is_object()) { // Can be a nullptr
+			return false;
+		}
+
+		// Parse the contets for the origin
+		json point;
+		try {
+			point = contents_["Coordinates"];
+		}
+		catch (json::out_of_range) {
+			// All shapes need coordinates to be drawable
+			return false;
+		}
+		catch (...) {
+			return false;
+		}
+
+		// Our coordinates should be an array
+		if (!point.is_array()) {
+			return false;
+		}
+		else {
+			origin_.x_ = point.at(0);
+			origin_.y_ = point.at(1);
+		}
+
+		if (!contents_.empty()) {
+			parseSubContents();
+		}
+	}
+
+	virtual void parseSubContents() {}
+
 public:
 	enum class ShapeType {
 		// Generic shapes to be chosen from for making shapes
