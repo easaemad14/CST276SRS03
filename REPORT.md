@@ -2,13 +2,19 @@
 
 Date Validation Strategy/Template Method  
 
-Name: <Not your Pokemon Class ID>  
+Name: Easa El Sirgany
 
 ---
-Issues:  
+Issues:  All issues are also contained in source with the "TODO:" tag
+	* All output information from polygons require the ability to JSONify Lines
+		-- There is no support for JSONifying any Shapes as of yet
 
 
-Notes:  
+Notes:  All notes are also contained in source with the "NOTE:" tag
+	* Requirements are not complete enough (for me)
+		-- Need to know what a shape needs to be able to draw it (e.g. coordinates, etc.)
+			= Assumptions were made revolving a coordinate system for basic functionality
+		-- SRS states rectangles must be drawn first, but I'm not drawing anything
 
 
 ###

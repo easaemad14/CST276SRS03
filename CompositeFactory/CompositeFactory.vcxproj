@@ -147,6 +147,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="circle.hpp" />
+    <ClInclude Include="iShape.hpp" />
+    <ClInclude Include="json.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="line.hpp" />
+    <ClInclude Include="polygon.hpp" />
+    <ClInclude Include="rectangle.hpp" />
+    <ClInclude Include="shape.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
