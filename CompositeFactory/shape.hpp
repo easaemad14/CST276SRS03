@@ -22,12 +22,17 @@ class Shape : public IShape {
 public:
 	void Display() override
 	{
-		json j = {
-			{"Name", name_},
-			{"Contents", contents_}
-		};
-
+		auto j = Jsonify();
 		std::cout << j.dump(4) << std::endl;
+	}
+
+	// Equivalent to to_json
+	json Jsonify() override
+	{
+		return {
+			{ "Name", name_ },
+			{ "Contents", contents_ }
+		};
 	}
 
 public:

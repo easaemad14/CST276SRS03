@@ -17,16 +17,16 @@ public:
 	Polygon(struct Coordinates origin, std::vector<Line> edges)
 	{
 		// Need an array of edges for our JSON object
-		//json arr;
-		//for (auto e : edges) {
-		//	arr.push_back(e);
-		//}
+		json arr;
+		for (auto e : edges) {
+			arr.push_back(e.Jsonify());
+		}
 		edges_.swap(edges);
 		origin_ = origin;
 
 		name_ = std::to_string(edges_.size()) + "-gon";
 		contents_ = {
-			//{ "Edges", arr },
+			{ "Edges", arr },
 			{ "Coordinates",{ origin_.x_, origin_.y_ } }
 		};
 	}

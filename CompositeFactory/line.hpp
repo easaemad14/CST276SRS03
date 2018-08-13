@@ -26,16 +26,6 @@ public:
 		};
 	}
 
-	// For inheritance :)
-	// TODO: Make this work for the children (ngons)
-	//void to_json(json& j, const Line& s)
-	//{
-	//	j = {
-	//		{ "Name", name_ },
-	//		{ "Contents", contents_ }
-	//	};
-	//}
-
 private:
 	int length_;
 	double degree_; // Orientation from x-axis (horizontal)

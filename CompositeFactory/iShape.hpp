@@ -12,4 +12,5 @@
 class IShape {
 public:
 	virtual void Display() = 0;
+	virtual json Jsonify() = 0;
 };

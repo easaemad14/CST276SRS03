@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="circle.hpp" />
+    <ClInclude Include="compositeShape.hpp" />
     <ClInclude Include="iShape.hpp" />
     <ClInclude Include="json.h" />
     <ClInclude Include="json.hpp" />
