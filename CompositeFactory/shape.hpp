@@ -7,6 +7,7 @@
 * Description:	Defines the base class for any shape object
 ********************************************************************************************/
 #include <iostream>
+#include <fstream>
 #include "iShape.hpp"
 
 
@@ -24,6 +25,23 @@ public:
 	{
 		auto j = Jsonify();
 		std::cout << j.dump(4) << std::endl;
+	}
+
+
+	void Save(std::string fName)
+	{
+		std::ofstream f(fName);
+		auto j = Jsonify();
+		f << j.dump(4) << std::endl;
+	}
+
+	// Deprecated?
+	static json Read(std::string fName)
+	{
+		std::ifstream f(fName);
+		json j;
+		//j << f;
+		return j;
 	}
 
 	// Equivalent to to_json
@@ -68,6 +86,8 @@ protected:
 		if (!contents_.empty()) {
 			parseSubContents();
 		}
+
+		return true;
 	}
 
 	virtual void parseSubContents() {}
